@@ -1,1 +1,1 @@
-Emacs demo setup for C/C++ described here: http://tuhdo.github.io/c-ide.html
+Emacs setup that has modular structure, as opposed to one big `init.el` or `.emacs` file.
