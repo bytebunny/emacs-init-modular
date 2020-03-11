@@ -1,14 +1,21 @@
 (require 'package)
-(add-to-list 'package-archives
-         '("melpa" . "http://melpa.org/packages/") t)
 
-(package-initialize)
+(setq package-list '(tangotango-theme use-package)); list the packages to be installed (space separated).
 
-(when (not package-archive-contents)
+(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")) )
+
+(package-initialize); activate all the packages (in particular autoloads)
+
+(when (not package-archive-contents); fetch the list of packages available
     (package-refresh-contents))
 
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
+(dolist (package package-list); install the missing packages
+  (unless (package-installed-p package)
+    (package-install package)))
+
+(load-theme 'tangotango t)
 
 (require 'use-package)
 (setq use-package-always-ensure t)
@@ -50,6 +57,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
     (company-c-headers sr-speedbar exec-path-from-shell function-args zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))

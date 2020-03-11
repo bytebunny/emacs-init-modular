@@ -57,4 +57,6 @@
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (windmove-default-keybindings)
 
+(global-display-line-numbers-mode 1); line numbers in all buffers.
+
 (provide 'setup-general)
