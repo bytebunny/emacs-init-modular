@@ -25,4 +25,12 @@
   (define-key c-mode-map  [(tab)] 'company-complete)
   (define-key c++-mode-map  [(tab)] 'company-complete))
 
+
+(unless (package-installed-p 'cmake-mode); syntax highlighting for CMakeLists.txt and .cmake files.
+  (package-refresh-contents)
+  (package-install 'cmake-mode))
+(setq package-list '(cmake-mode))
+(setq load-path (cons (expand-file-name "/dir/with/cmake-mode") load-path))
+(require 'cmake-mode)
+
 (provide 'setup-c)
