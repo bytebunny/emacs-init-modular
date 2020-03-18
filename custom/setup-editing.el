@@ -256,5 +256,7 @@ Position the cursor at it's beginning, according to the current mode."
 (global-set-key (kbd "M-o") 'open-line)
 
 (require 'setup-c)
+; Enable makefile mode in files that start with [Mm]akefile string (e.g. Makefile2):
+(add-to-list 'auto-mode-alist '("\\(/\\|\\`\\)[Mm]akefile" . makefile-bsdmake-mode))
 
 (provide 'setup-editing)
