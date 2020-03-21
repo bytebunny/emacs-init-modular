@@ -58,5 +58,6 @@
 (windmove-default-keybindings)
 
 (global-display-line-numbers-mode 1); line numbers in all buffers.
+(blink-cursor-mode 0); non-blinking cursor.
 
 (provide 'setup-general)
