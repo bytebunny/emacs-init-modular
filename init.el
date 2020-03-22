@@ -1,7 +1,6 @@
 (require 'package)
 
 (setq package-list '(tangotango-theme use-package)); list the packages to be installed (space separated).
-
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")) )
@@ -23,10 +22,7 @@
 (add-to-list 'load-path "~/.emacs.d/custom")
 
 (require 'setup-general)
-(if (version< emacs-version "24.4")
-    (require 'setup-ivy-counsel)
-  (require 'setup-helm)
-  (require 'setup-helm-gtags))
+
 ;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
@@ -37,16 +33,6 @@
 ;; function-args
 (require 'function-args)
 (fa-config-default)
-
-;; text completion framework
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-(setq company-backends (delete 'company-semantic company-backends))
-(add-to-list 'company-backends 'company-c-headers) ;; auto-completion for C/C++ headers
-(require 'company-c-headers)
-(add-to-list 'company-c-headers-path-system "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/")
-(define-key c-mode-map  [(tab)] 'company-complete)
-(define-key c++-mode-map  [(tab)] 'company-complete)
 
 ;; Use exec-path-from-shell package to copy env variables from the shell:
 (when (memq window-system '(mac ns x))

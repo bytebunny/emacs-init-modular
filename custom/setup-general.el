@@ -34,8 +34,8 @@
 
 ;; company
 (use-package company
-  :init
-  (global-company-mode 1)
+  :config
+  (add-hook 'after-init-hook 'global-company-mode)
   (delete 'company-semantic company-backends))
 ;; (define-key c-mode-map  [(control tab)] 'company-complete)
 ;; (define-key c++-mode-map  [(control tab)] 'company-complete)

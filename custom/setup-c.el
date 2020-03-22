@@ -1,7 +1,9 @@
 ;; company-c-headers
 (use-package company-c-headers
   :init
-  (add-to-list 'company-backends 'company-c-headers))
+  (add-to-list 'company-backends 'company-c-headers);; auto-completion for C/C++ headers
+  )
+(add-to-list 'company-c-headers-path-system "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/")
 
 ;; hs-minor-mode for folding source code
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
@@ -30,7 +32,6 @@
   (package-refresh-contents)
   (package-install 'cmake-mode))
 (setq package-list '(cmake-mode))
-(setq load-path (cons (expand-file-name "/dir/with/cmake-mode") load-path))
 (require 'cmake-mode)
 
 (provide 'setup-c)
