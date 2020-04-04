@@ -34,4 +34,12 @@
 (setq package-list '(cmake-mode))
 (require 'cmake-mode)
 
+(unless (package-installed-p 'highlight-doxygen)
+  (package-refresh-contents)
+  (package-install 'highlight-doxygen))
+(use-package highlight-doxygen
+  :config
+  (highlight-doxygen-global-mode 1));; enable the minor `highlight-doxygen-mode` mode for
+                                    ;; all major modes specified in highlight-doxygen-modes (c,c++,objc)
+
 (provide 'setup-c)
