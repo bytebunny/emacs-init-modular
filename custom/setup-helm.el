@@ -1,6 +1,14 @@
 (use-package helm
   :init
   (progn
+    (setq package-list '(helm-descbinds)); list the packages to be installed (space separated).
+    (dolist (package package-list); install the missing packages
+      (unless (package-installed-p package)
+        (package-install package)))
+
+    (require 'helm-descbinds)
+    (helm-descbinds-mode)
+
     (require 'helm-config)
     (require 'helm-grep)
     ;; To fix error at compile:
