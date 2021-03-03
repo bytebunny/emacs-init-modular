@@ -32,6 +32,7 @@
 (require 'setup-helm)
 (require 'setup-helm-gtags)
 (require 'setup-auctex)
+(require 'setup-yml)
 
 
 ;; function-args
@@ -50,7 +51,7 @@
  '(custom-safe-themes
    '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
  '(package-selected-packages
-   '(gh-md markdown-mode magit helm-projectile helm-swoop helm-descbinds company-c-headers sr-speedbar exec-path-from-shell function-args zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu)))
+   '(yaml-mode gh-md markdown-mode magit helm-projectile helm-swoop helm-descbinds company-c-headers sr-speedbar exec-path-from-shell function-args zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
