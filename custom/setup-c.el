@@ -27,19 +27,25 @@
   (define-key c-mode-map  [(tab)] 'company-complete)
   (define-key c++-mode-map  [(tab)] 'company-complete))
 
+(setq package-list '( cmake-mode ; syntax highlighting for CMakeLists.txt and .cmake files.
+                      highlight-doxygen
+                      function-args
+                      ) ); list the packages to be installed (space separated).
+(when (not package-archive-contents); fetch the list of packages available
+  (package-refresh-contents))
 
-(unless (package-installed-p 'cmake-mode); syntax highlighting for CMakeLists.txt and .cmake files.
-  (package-refresh-contents)
-  (package-install 'cmake-mode))
-(setq package-list '(cmake-mode))
+(dolist (package package-list); install the missing packages
+  (unless (package-installed-p package)
+    (package-install package)))
+
 (require 'cmake-mode)
 
-(unless (package-installed-p 'highlight-doxygen)
-  (package-refresh-contents)
-  (package-install 'highlight-doxygen))
 (use-package highlight-doxygen
   :config
   (highlight-doxygen-global-mode 1));; enable the minor `highlight-doxygen-mode` mode for
                                     ;; all major modes specified in highlight-doxygen-modes (c,c++,objc)
+;; function-args
+(require 'function-args)
+(fa-config-default)
 
 (provide 'setup-c)

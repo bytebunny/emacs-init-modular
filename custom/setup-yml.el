@@ -1,4 +1,5 @@
-(require 'yaml-mode)
+(unless (package-installed-p 'yaml-mode)
+  (package-install 'yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 ; Unlike python-mode, this mode follows the Emacs convention of not

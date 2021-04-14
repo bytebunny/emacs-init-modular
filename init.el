@@ -35,10 +35,6 @@
 (require 'setup-yml)
 
 
-;; function-args
-(require 'function-args)
-(fa-config-default)
-
 ;; Use exec-path-from-shell package to copy env variables from the shell:
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
