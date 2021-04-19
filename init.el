@@ -33,6 +33,7 @@
 (require 'setup-helm-gtags)
 (require 'setup-auctex)
 (require 'setup-yml)
+(require 'setup-python)
 
 
 ;; Use exec-path-from-shell package to copy env variables from the shell:
