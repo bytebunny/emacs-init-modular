@@ -38,9 +38,18 @@
   (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
   )
 
-;; Use IPython as Python shell. Pressing C-c C-p opens a new buffer with IPython interpreter.
-(setq
- python-shell-interpreter "ipython"
- python-shell-interpreter-args "-i")
+;; Emacs IPython Notebook
+(use-package ein
+  :ensure t ; install if not present
+  :init
+  (setq ein:output-area-inlined-images t) ; display images inside buffer
+  )
+
+;; Use IPython for REPL
+(setq python-shell-interpreter "jupyter"
+      python-shell-interpreter-args "console --simple-prompt"
+      python-shell-prompt-detect-failure-warning nil)
+;; (add-to-list 'python-shell-completion-native-disabled-interpreters
+;;                      "jupyter")
 
 (provide 'setup-python)

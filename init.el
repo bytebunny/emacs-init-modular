@@ -2,6 +2,7 @@
 
 (setq package-list '( tangotango-theme
                       use-package
+                      magit
                       auctex auto-complete-auctex auctex-latexmk ac-math
                     ) ); list the packages to be installed (space separated).
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
