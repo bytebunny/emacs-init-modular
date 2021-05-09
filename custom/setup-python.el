@@ -1,25 +1,46 @@
-(setq python-shell-interpreter "python")
+;;; setup-python --- customize Python environment
 
-;Open .py and .pyw in python-mode
-(setq auto-mode-alist
-      (cons '("\\.\\(py\\|pyw\\)$" . python-mode) auto-mode-alist))
-(setq interpreter-mode-alist
-      (cons '("python" . python-mode)
-            interpreter-mode-alist))
+;; Color the mode line according to the status of Flycheck (see below) syntax.
+(use-package flycheck-color-mode-line
+  :ensure t) ; install if not present
 
-(setq package-list '( epc ; for jedi configuration
-                      url anaconda-mode ; for anaconda-mode.
-                      company-jedi ; auto-completion.
-                      ) ); list the packages to be installed (space separated).
-(dolist (package package-list); install the missing packages
-  (unless (package-installed-p package)
-    (package-install package)))
+;; On-the-fly syntax check.
+; NOTE: On Windows, you might need to create a symlink for python3 for
+; flycheck to be able to find Python checkers (e.g. flake8 and pylint).
+(use-package flycheck
+  :ensure t ; install if not present
+  :init ; execute before the package is loaded
+  (global-flycheck-mode)
+  (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
+  )
 
-(add-hook 'python-mode-hook 'jedi:setup)
-(add-hook 'python-mode-hook 'anaconda-mode)
-(add-to-list 'company-backends 'company-jedi)
+;; Text completion framework
+(use-package company
+  :ensure t ; install if not present
+  :config ; execute code after the package is loaded
+  (add-to-list 'company-backends 'company-jedi)
+  (global-company-mode 1) ; enable in all buffers.
+  )
 
-;(setq jedi:setup-keys t)
-;(setq jedi:complete-on-dot t)
+;; Completion back-end for Python JEDI.
+(use-package company-jedi
+  :ensure t ; install if not present
+  :init ; execute before the package is loaded
+  (setq jedi:setup-keys t)
+  (setq jedi:complete-on-dot t)
+  (add-hook 'python-mode-hook 'jedi:setup) ; manually installing requirements from ~/emacs.d/elpa/jedi*/ might be necessary.
+  )
+
+;; Automatically format the buffer according to Python's PEP8
+(use-package py-autopep8
+  :ensure t ; install if not present
+  :init ; execute before the package is loaded
+  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+  )
+
+;; Use IPython as Python shell. Pressing C-c C-p opens a new buffer with IPython interpreter.
+(setq
+ python-shell-interpreter "ipython"
+ python-shell-interpreter-args "-i")
 
 (provide 'setup-python)
