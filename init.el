@@ -35,6 +35,7 @@
 (require 'setup-auctex)
 (require 'setup-yml)
 (require 'setup-python)
+(require 'setup-markup)
 
 ;; Use exec-path-from-shell package to copy env variables from the shell:
 (when (memq window-system '(mac ns x))
