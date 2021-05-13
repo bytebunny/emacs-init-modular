@@ -19,7 +19,6 @@
   :ensure t ; install if not present
   :config ; execute code after the package is loaded
   (add-to-list 'company-backends 'company-jedi)
-  (global-company-mode 1) ; enable in all buffers.
   )
 
 ;; Completion back-end for Python JEDI.

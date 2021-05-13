@@ -54,8 +54,7 @@
    '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
  '(package-selected-packages
    '(flycheck yaml-mode gh-md markdown-mode magit helm-projectile helm-swoop helm-descbinds company-c-headers sr-speedbar exec-path-from-shell function-args zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))
- '(shell-file-name
-   "C:\\Users\\rskrypny\\AppData\\Local\\Programs\\Git\\usr\\bin\\bash.exe"))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
