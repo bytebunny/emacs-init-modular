@@ -30,13 +30,6 @@
   (add-hook 'python-mode-hook 'jedi:setup) ; manually installing requirements from ~/emacs.d/elpa/jedi*/ might be necessary.
   )
 
-;; Automatically format the buffer according to Python's PEP8
-(use-package py-autopep8
-  :ensure t ; install if not present
-  :init ; execute before the package is loaded
-  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
-  )
-
 ;; Emacs IPython Notebook
 (use-package ein
   :ensure t ; install if not present

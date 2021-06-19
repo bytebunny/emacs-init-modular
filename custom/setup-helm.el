@@ -145,6 +145,14 @@
       :init
       (helm-projectile-on)
       (setq projectile-completion-system 'helm)
-      (setq projectile-indexing-method 'alien))))
+      (setq projectile-indexing-method 'alien))
+
+    ;; Find and replace in multiple files using helm-projectile-grep and
+    ;; wgrep-change-to-wgrep-mode
+    (use-package wgrep-helm
+      :ensure t; install if not present
+      )
+    )
+  )
 
 (provide 'setup-helm)
