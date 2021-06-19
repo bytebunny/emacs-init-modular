@@ -18,6 +18,13 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+;; Use exec-path-from-shell package to copy env variables from the shell:
+(use-package exec-path-from-shell
+  :config ; execute code after the package is loaded
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize))
+  )
+
 (load-theme 'tangotango t)
 
 (require 'use-package)
@@ -36,13 +43,6 @@
 (require 'setup-yml)
 (require 'setup-python)
 (require 'setup-markup)
-
-;; Use exec-path-from-shell package to copy env variables from the shell:
-(use-package exec-path-from-shell
-  :config ; execute code after the package is loaded
-  (when (memq window-system '(mac ns x))
-    (exec-path-from-shell-initialize))
-  )
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
