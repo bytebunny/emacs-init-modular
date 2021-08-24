@@ -44,4 +44,11 @@
 ;; (add-to-list 'python-shell-completion-native-disabled-interpreters
 ;;                      "jupyter")
 
+;; NumPy-style docstring skeleton generation with C-c C-n
+(use-package numpydoc
+  :ensure t
+  :after python
+  :bind (:map python-mode-map
+              ("C-c C-n" . numpydoc-generate)))
+
 (provide 'setup-python)
