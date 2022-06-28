@@ -17,6 +17,9 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+(require 'use-package)
+(setq use-package-always-ensure t)
+
 ;; Use exec-path-from-shell package to copy env variables from the shell:
 (use-package exec-path-from-shell
   :config ; execute code after the package is loaded
@@ -25,9 +28,6 @@
   )
 
 (load-theme 'tangotango t)
-
-(require 'use-package)
-(setq use-package-always-ensure t)
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 
@@ -54,7 +54,7 @@
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (flycheck yaml-mode gh-md markdown-mode magit helm-projectile helm-swoop helm-descbinds company-c-headers sr-speedbar exec-path-from-shell function-args zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
+    (flycheck yaml-mode gh-md markdown-mode magit helm-projectile helm-swoop helm-descbinds company-c-headers sr-speedbar function-args zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
