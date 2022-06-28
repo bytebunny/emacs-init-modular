@@ -3,7 +3,6 @@
 (setq package-list '( tangotango-theme
                       use-package
                       magit
-                      auctex auto-complete-auctex auctex-latexmk ac-math
                     ) ); list the packages to be installed (space separated).
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
@@ -39,7 +38,7 @@
 (require 'setup-editing)
 (require 'setup-helm)
 (require 'setup-helm-gtags)
-(require 'setup-auctex)
+;(require 'setup-auctex)
 (require 'setup-yml)
 (require 'setup-python)
 (require 'setup-markup)
@@ -51,10 +50,11 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(custom-safe-themes
-   '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
+   (quote
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
-   '(flycheck yaml-mode gh-md markdown-mode magit helm-projectile helm-swoop helm-descbinds company-c-headers sr-speedbar exec-path-from-shell function-args zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))
- )
+   (quote
+    (flycheck yaml-mode gh-md markdown-mode magit helm-projectile helm-swoop helm-descbinds company-c-headers sr-speedbar exec-path-from-shell function-args zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
