@@ -47,8 +47,9 @@
 ;; GROUP: Editing -> Undo -> Undo Tree
 (use-package undo-tree
   :init
-  (global-undo-tree-mode 1))
-
+  (global-undo-tree-mode 1)
+  :config
+  (setq undo-tree-auto-save-history nil))
 
 ;; Package: yasnippet
 ;; GROUP: Editing -> Yasnippet
