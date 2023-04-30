@@ -33,6 +33,7 @@
 
 (require 'setup-general)
 (require 'setup-convenience)
+(require 'setup-files)
 ;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
