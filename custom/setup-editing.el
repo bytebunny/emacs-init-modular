@@ -59,6 +59,11 @@
   :init
   (add-hook 'prog-mode-hook 'yas-minor-mode))
 
+;; Package: yasnippet-snippets
+(use-package yasnippet-snippets
+  :ensure t ; install if missing
+  )
+
 ;; Package: clean-aindent-mode
 (use-package clean-aindent-mode
   :init
