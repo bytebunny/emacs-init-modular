@@ -34,6 +34,7 @@
 (require 'setup-general)
 (require 'setup-convenience)
 (require 'setup-files)
+(require 'setup-help)
 ;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
