@@ -2,8 +2,17 @@
 (use-package company-c-headers
   :init
   (add-to-list 'company-backends 'company-c-headers);; auto-completion for C/C++ headers
+  :config ; execute after the package is loaded
+  (add-to-list 'company-c-headers-path-system
+               (cond ((eq system-type 'gnu/linux)
+                      "/usr/local/include/c++/12.2.0")
+                     ((eq system-type 'darwin)
+                      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/")
+                     ;;((eq system-type 'windows-nt)
+                     ;; )
+                     )
+               )
   )
-(add-to-list 'company-c-headers-path-system "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/")
 
 ;; hs-minor-mode for folding source code
 (add-hook 'c-mode-common-hook 'hs-minor-mode)

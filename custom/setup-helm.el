@@ -1,4 +1,5 @@
 (use-package helm
+  :ensure t ; install if missing
   :init
   (progn
     (setq package-list '(helm-descbinds)); list the packages to be installed (space separated).
