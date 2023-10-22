@@ -64,3 +64,4 @@
 (fa-config-default)
 
 (provide 'setup-c)
+;;; setup-c.el ends here
