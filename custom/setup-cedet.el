@@ -10,6 +10,7 @@
 ;; to jump to any code in system include path,
 ;; you must first tell Semantic where it is:
 (semantic-add-system-include "/usr/include")
+(semantic-add-system-include "/usr/include/boost" 'c++-mode) ;; ignore the optional mode argument for the path to be available on bot C and C++ modes.
 (semantic-add-system-include "/usr/local/include/c++/12.2.0")
 
 (defun alexott/cedet-hook ()
