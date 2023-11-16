@@ -38,11 +38,13 @@
   )
 
 ;; Use IPython for REPL
-(setq python-shell-interpreter "jupyter"
-      python-shell-interpreter-args "console --simple-prompt"
-      python-shell-prompt-detect-failure-warning nil)
-;; (add-to-list 'python-shell-completion-native-disabled-interpreters
-;;                      "jupyter")
+(with-eval-after-load 'python
+  (setq python-shell-interpreter "jupyter"
+        python-shell-interpreter-args "console --simple-prompt"
+        python-shell-prompt-detect-failure-warning nil)
+  (add-to-list 'python-shell-completion-native-disabled-interpreters
+               "jupyter")
+)
 
 ;; NumPy-style docstring skeleton generation with C-c C-n
 (use-package numpydoc
