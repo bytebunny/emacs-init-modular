@@ -1,6 +1,7 @@
 (unless (package-installed-p 'yaml-mode)
   (package-install 'yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\Pipfile\\'" . yaml-mode)) ;; Python pipenv dependency files
 
 ; Unlike python-mode, this mode follows the Emacs convention of not
 ; binding the ENTER key to `newline-and-indent'.
