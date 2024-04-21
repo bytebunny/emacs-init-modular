@@ -63,6 +63,6 @@
 
 (global-display-line-numbers-mode 1); line numbers in all buffers.
 (blink-cursor-mode 0); non-blinking cursor.
-(set-face-attribute 'default (selected-frame) :height 140)
+(set-face-attribute 'default (selected-frame) :height 120)
 
 (provide 'setup-general)
