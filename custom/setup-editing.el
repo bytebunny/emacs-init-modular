@@ -59,9 +59,9 @@
   :init
   (add-hook 'prog-mode-hook 'yas-minor-mode)
   :config
-  ;; Bind `SPC' to `yas-expand' when snippet expansion available (it
+  ;; Bind right shift + left tab to `yas-expand' when snippet expansion available (it
   ;; will still call `self-insert-command' otherwise).
-  (define-key yas-minor-mode-map (kbd "SPC") yas-maybe-expand)
+  (define-key yas-minor-mode-map (kbd "S-<iso-lefttab>") yas-maybe-expand)
   ;; Bind `C-c y' to `yas-expand' ONLY.
   (define-key yas-minor-mode-map (kbd "C-c y") #'yas-expand)
   )
